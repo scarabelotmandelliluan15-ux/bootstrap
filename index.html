@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Futebol | Grid Bootstrap 5</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <style>
+    body {
+      background-color: #f1f5f2;
+    }
+
+    .jumbotron {
+      background: linear-gradient(135deg, #063d21, #198754);
+      color: white;
+      padding: 5rem 1rem;
+      border-bottom: 6px solid #ffc107;
+    }
+
+    .titulo-secao {
+      color: #075c31;
+      font-weight: 700;
+    }
+
+    .bloco {
+      min-height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      border-radius: 0.75rem;
+      color: white;
+      font-size: 1.25rem;
+      font-weight: 700;
+      text-align: center;
+      box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.18);
+    }
+
+    .time-a {
+      background-color: #198754;
+    }
+
+    .time-b {
+      background-color: #0d6efd;
+    }
+
+    .jogador {
+      background-color: #495057;
+    }
+
+    .aquecimento {
+      background-color: #ffc107;
+      color: #212529;
+    }
+
+    .partida {
+      background-color: #dc3545;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Jumbotron -->
+  <header class="jumbotron text-center">
+    <div class="container">
+      <h1 class="display-3 fw-bold">Mundo do Futebol</h1>
+
+      <p class="lead mb-0">
+        Paixão, união e emoção dentro das quatro linhas.
+      </p>
+    </div>
+  </header>
+
+  <main class="container py-5">
+
+    <!-- Duas partes com 6 colunas cada -->
+    <section class="mb-5">
+      <h2 class="titulo-secao mb-3">
+        Confronto entre equipes
+      </h2>
+
+      <div class="row g-3">
+        <div class="col-12 col-md-6">
+          <div class="bloco time-a">
+            Time da Casa — 6 colunas
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div class="bloco time-b">
+            Time Visitante — 6 colunas
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Três partes com 4 colunas cada -->
+    <section class="mb-5">
+      <h2 class="titulo-secao mb-3">
+        Craques em campo
+      </h2>
+
+      <div class="row g-3">
+        <div class="col-12 col-md-4">
+          <div class="bloco jogador">
+            Goleiro — 4 colunas
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="bloco jogador">
+            Meio-campista — 4 colunas
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="bloco jogador">
+            Atacante — 4 colunas
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Uma parte com 4 colunas e outra com 8 -->
+    <section>
+      <h2 class="titulo-secao mb-3">
+        Dia de jogo
+      </h2>
+
+      <div class="row g-3">
+        <div class="col-12 col-md-4">
+          <div class="bloco aquecimento">
+            Aquecimento — 4 colunas
+          </div>
+        </div>
+
+        <div class="col-12 col-md-8">
+          <div class="bloco partida">
+            Partida principal — 8 colunas
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-dark text-white text-center py-4 mt-5">
+    <p class="mb-0">
+      Página criada com Bootstrap 5.
+    </p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
