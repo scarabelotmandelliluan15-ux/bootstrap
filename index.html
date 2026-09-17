@@ -16,6 +16,42 @@
       background-color: #f1f5f2;
     }
 
+    /* Navbar */
+    .navbar-futebol {
+      background-color: #063d21;
+      border-bottom: 4px solid #ffc107;
+    }
+
+    .navbar-futebol .navbar-brand {
+      color: #ffc107;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .navbar-futebol .navbar-brand:hover {
+      color: #ffd44d;
+    }
+
+    .navbar-futebol .nav-link {
+      color: #e9f5ee;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .navbar-futebol .nav-link:hover,
+    .navbar-futebol .nav-link.active {
+      color: #ffc107;
+    }
+
+    .navbar-futebol .navbar-toggler {
+      border-color: #ffc107;
+    }
+
+    .navbar-futebol .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ffc107' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    /* Jumbotron */
     .jumbotron {
       background: linear-gradient(135deg, #063d21, #198754);
       color: white;
@@ -36,114 +72,187 @@
       padding: 1rem;
       border-radius: 0.75rem;
       color: white;
-      font-size: 1.25rem;
-      font-weight: 700;
+      font-weight: 600;
       text-align: center;
-      box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.18);
     }
 
-    .time-a {
-      background-color: #198754;
-    }
+    .bloco-verde   { background-color: #198754; }
+    .bloco-escuro  { background-color: #063d21; }
+    .bloco-amarelo { background-color: #ffc107; color: #063d21; }
+    .bloco-azul    { background-color: #0d6efd; }
 
-    .time-b {
-      background-color: #0d6efd;
-    }
-
-    .jogador {
-      background-color: #495057;
-    }
-
-    .aquecimento {
-      background-color: #ffc107;
-      color: #212529;
-    }
-
-    .partida {
-      background-color: #dc3545;
+    /* Compensa a navbar fixa ao rolar para âncoras */
+    section[id] {
+      scroll-margin-top: 90px;
     }
   </style>
 </head>
-
 <body>
 
-  <!-- Jumbotron -->
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-futebol sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">⚽ FutebolBR</a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#menuPrincipal"
+        aria-controls="menuPrincipal"
+        aria-expanded="false"
+        aria-label="Alternar navegação"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#clubes">Clubes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#estatisticas">Estatísticas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#posicoes">Posições</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Campeonatos
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Brasileirão Série A</a></li>
+              <li><a class="dropdown-item" href="#">Copa do Brasil</a></li>
+              <li><a class="dropdown-item" href="#">Libertadores</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Champions League</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <form class="d-flex ms-lg-3" role="search" onsubmit="return false;">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Buscar time..."
+            aria-label="Buscar"
+          >
+          <button class="btn btn-warning" type="submit">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Jumbotron / Cabeçalho -->
   <header class="jumbotron text-center">
     <div class="container">
-      <h1 class="display-3 fw-bold">Mundo do Futebol</h1>
-
-      <p class="lead mb-0">
-        Paixão, união e emoção dentro das quatro linhas.
-      </p>
+      <h1 class="display-4 fw-bold">⚽ Mundo do Futebol</h1>
+      <p class="lead">Exemplo de layout responsivo utilizando o Grid do Bootstrap 5</p>
+      <a href="#conteudo" class="btn btn-warning btn-lg mt-3">Explorar</a>
     </div>
   </header>
 
-  <main class="container py-5">
+  <!-- Conteúdo principal -->
+  <main id="conteudo" class="container my-5">
 
-    <!-- Duas partes com 6 colunas cada -->
-    <section class="mb-5">
-      <h2 class="titulo-secao mb-3">
-        Confronto entre equipes
-      </h2>
+    <!-- Seção 1: Grid de 3 colunas iguais -->
+    <section id="clubes" class="mb-5">
+      <h2 class="titulo-secao mb-4">🏆 Grandes Clubes</h2>
 
-      <div class="row g-3">
-        <div class="col-12 col-md-6">
-          <div class="bloco time-a">
-            Time da Casa — 6 colunas
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="bloco bloco-verde">
+            Time A<br><small>Coluna 1 de 3</small>
           </div>
         </div>
-
-        <div class="col-12 col-md-6">
-          <div class="bloco time-b">
-            Time Visitante — 6 colunas
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="bloco bloco-escuro">
+            Time B<br><small>Coluna 2 de 3</small>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Três partes com 4 colunas cada -->
-    <section class="mb-5">
-      <h2 class="titulo-secao mb-3">
-        Craques em campo
-      </h2>
-
-      <div class="row g-3">
-        <div class="col-12 col-md-4">
-          <div class="bloco jogador">
-            Goleiro — 4 colunas
-          </div>
-        </div>
-
-        <div class="col-12 col-md-4">
-          <div class="bloco jogador">
-            Meio-campista — 4 colunas
-          </div>
-        </div>
-
-        <div class="col-12 col-md-4">
-          <div class="bloco jogador">
-            Atacante — 4 colunas
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="bloco bloco-amarelo">
+            Time C<br><small>Coluna 3 de 3</small>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Uma parte com 4 colunas e outra com 8 -->
+    <!-- Seção 2: Colunas desiguais -->
+    <section id="estatisticas" class="mb-5">
+      <h2 class="titulo-secao mb-4">📊 Estatísticas do Campeonato</h2>
+
+      <div class="row g-4">
+        <div class="col-12 col-lg-8">
+          <div class="bloco bloco-escuro" style="min-height: 200px;">
+            Tabela de Classificação (8/12)
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="bloco bloco-azul" style="min-height: 200px;">
+            Artilheiros (4/12)
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção 3: Grid com alinhamento e espaçamento -->
+    <section id="posicoes" class="mb-5">
+      <h2 class="titulo-secao mb-4">🎯 Posições em Campo</h2>
+
+      <div class="row g-3 justify-content-center">
+        <div class="col-6 col-md-3">
+          <div class="bloco bloco-verde">Goleiro</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="bloco bloco-escuro">Zagueiro</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="bloco bloco-azul">Meia</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="bloco bloco-amarelo">Atacante</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção 4: Grid aninhado -->
     <section>
-      <h2 class="titulo-secao mb-3">
-        Dia de jogo
-      </h2>
+      <h2 class="titulo-secao mb-4">🧩 Grid Aninhado</h2>
 
       <div class="row g-3">
-        <div class="col-12 col-md-4">
-          <div class="bloco aquecimento">
-            Aquecimento — 4 colunas
+        <div class="col-12 col-md-6">
+          <div class="bloco bloco-escuro flex-column" style="min-height: 180px;">
+            <span class="mb-3">Bloco Externo (6/12)</span>
+
+            <div class="row g-2 w-100">
+              <div class="col-6">
+                <div class="bloco bloco-verde" style="min-height: 60px; font-size: 0.85rem;">
+                  Interno 1
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="bloco bloco-amarelo" style="min-height: 60px; font-size: 0.85rem;">
+                  Interno 2
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="col-12 col-md-8">
-          <div class="bloco partida">
-            Partida principal — 8 colunas
+        <div class="col-12 col-md-6">
+          <div class="bloco bloco-azul" style="min-height: 180px;">
+            Bloco Externo (6/12)
           </div>
         </div>
       </div>
@@ -151,13 +260,15 @@
 
   </main>
 
-  <footer class="bg-dark text-white text-center py-4 mt-5">
-    <p class="mb-0">
-      Página criada com Bootstrap 5.
-    </p>
+  <!-- Rodapé -->
+  <footer class="text-center py-4" style="background-color: #063d21; color: #fff;">
+    <div class="container">
+      <p class="mb-0">⚽ Exemplo de Grid com Bootstrap 5 — &copy; 2025</p>
+    </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  ></script>
 </body>
 </html>
